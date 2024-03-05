@@ -5,8 +5,8 @@ const DECISION_URL = "https://project-django-09i4.onrender.com/complain/";
 
 function App() {
   const [formvalue, setFormvalue] = useState({
-    complaintCategory: "",
-    complaintDescription: "",
+    complaint_type: "",
+    complaint_description: "",
   });
 
   const [result, setResult] = useState("");
@@ -18,7 +18,7 @@ function App() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    const data = formvalue;
+    console.log(formvalue);
 
     try {
       const response = await fetch(DECISION_URL, {
@@ -26,7 +26,7 @@ function App() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formvalue),
       });
 
       if (!response.ok) {
@@ -53,31 +53,26 @@ function App() {
         <div className="complaint">
           {/* Complaint category field */}
           <label className="complaint-category-label">Complaint Category</label>
-          <select>
-            <option value="CIVIL RIGHTS">CIVIL RIGHTS COMPLAINT</option>
-            <option value="CRIMINAL ALLEGATION">CRIMINAL ALLEGATION</option>
-            <option value="DEPARTMENTAL VIOLATIONS">
-              DEPARTMENTAL VIOLATIONS
+          <select name="complaint_type" onChange={handleInput}>
+            <option disabled selected>
+              -- Select a complaint type --
             </option>
-            <option value="DOMESTIC">DOMESTIC</option>
-            <option value="DRUGS">DRUGS</option>
-            <option value="FALSIFICATION">FALSIFICATION</option>
-            <option value="FORCE-TASER/CED/ECW">FORCE-TASER/CED/ECW</option>
-            <option value="HARASSMENT">HARASSMENT</option>
-            <option value="LACK OF SERVICE">LACK OF SERVICE</option>
-            <option value="NON-INVESTIGATORY INCIDENT">
-              NON-INVESTIGATORY INCIDENT
-            </option>
-            <option value="OTHER MISCONDUCT">OTHER MISCONDUCT</option>
-            <option value="PHYSICAL ABUSE">PHYSICAL ABUSE</option>
-            <option value="SEXUAL CRIME/MISCONDUCT">
-              SEXUAL CRIME/MISCONDUCT
-            </option>
-            <option value="UNPROFESSIONAL CONDUCT">
-              UNPROFESSIONAL CONDUCT
-            </option>
-            <option value="USE OF FORCE INTERNAL">USE OF FORCE NTERNAL</option>
-            <option value="VERBAL ABUSE">VERBAL ABUSE</option>
+            <option>CIVIL RIGHTS COMPLAINT</option>
+            <option>CRIMINAL ALLEGATION</option>
+            <option>DEPARTMENTAL VIOLATIONS</option>
+            <option>DOMESTIC</option>
+            <option>DRUGS</option>
+            <option>FALSIFICATION</option>
+            <option>FORCE-TASER/CED/ECW</option>
+            <option>HARASSMENT</option>
+            <option>LACK OF SERVICE</option>
+            <option>NON-INVESTIGATORY INCIDENT</option>
+            <option>OTHER MISCONDUCT</option>
+            <option>PHYSICAL ABUSE</option>
+            <option>SEXUAL CRIME/MISCONDUCT</option>
+            <option>UNPROFESSIONAL CONDUCT</option>
+            <option>USE OF FORCE NTERNAL</option>
+            <option>VERBAL ABUSE</option>
           </select>
         </div>
 
@@ -86,13 +81,12 @@ function App() {
           <label className="complaint-description-label">
             Complaint Description
           </label>
-          <input
-            type="text"
-            name="complaintDescription"
-            value={formvalue.complaintDescription}
+          <textarea
+            name="complaint_description"
+            // value={formvalue.complaint_description}
             onChange={handleInput}
             className="complaint-description-input"
-          />
+          ></textarea>
         </div>
 
         <div className="submit-button">
@@ -103,10 +97,10 @@ function App() {
           <label className="complaint-decision-label">Complaint Priority</label>
           <input
             type="text"
-            name="complaintDecision"
-            value={result}
-            readOnly
+            name="complaint_decision"
+            value={result.complaint_decision}
             onChange={handleInput}
+            readOnly={true}
             className="complaint-decision-input"
           />
         </div>
