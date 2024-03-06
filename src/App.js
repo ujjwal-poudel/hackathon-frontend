@@ -109,7 +109,7 @@ function App() {
               <button className="submit-button">Submit</button>
             </div>
 
-            <div className="complaint-decision">
+            {/* <div className="complaint-decision">
               <label className="complaint-decision-label">
                 Complaint Priority
               </label>
@@ -120,7 +120,7 @@ function App() {
                 readOnly={true}
                 className="complaint-decision-input"
               />
-            </div>
+            </div> */}
           </form>
         </div>
       </main>
