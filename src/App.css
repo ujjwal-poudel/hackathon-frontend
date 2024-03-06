@@ -3,24 +3,68 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  height: calc(100vh - 120px);
+  margin: 0px 10px;
 }
 
 .App {
+  position: absolute;
   background-color: #1a1a1a;
   color: #ffffff;
   width: 100%;
   max-width: 495px;
-  height: 100%;
   max-height: 383px;
   border-radius: 16px;
   padding: 16px 25px;
+  box-sizing: border-box;
 }
 
 .heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   font-family: "Raleway", sans-serif;
   font-size: 20px;
   font-weight: 700;
   padding: 0px 0px 6px 0px;
+  box-sizing: border-box;
+}
+
+.complaint-decision-default {
+  background-color: #d9d9d9;
+  color: #000000;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.complaint-decision-red {
+  background-color: #cd0000;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.complaint-decision-green {
+  background-color: #118847;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.complaint-decision-yellow {
+  background-color: #ffd440;
+  color: #000000;
+  font-size: 12px;
+}
+
+.complaint-decision {
+  height: 36px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.complaint-decision > p {
+  font-size: 12px;
 }
 
 .second-heading {
@@ -62,7 +106,7 @@ main {
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
-  padding: 0px 0px 12px 0px;
+  padding: 0px 0px 24px 0px;
 }
 
 .complaint-description-label {
@@ -82,11 +126,11 @@ main {
 
 .complaint-description-input {
   padding: 9px 12px;
+  box-sizing: border-box;
 }
 
 .submit-button {
   width: 100%;
-  max-width: 446px;
   height: 33px;
   background-color: #d9d9d9;
   border-radius: 5px;

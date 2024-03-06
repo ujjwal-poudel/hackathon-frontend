@@ -10,7 +10,8 @@ function App() {
     complaint_description: "",
   });
 
-  const [priortiy, setPriority] = useState("");
+  const [priortiy, setPriority] = useState("N/A");
+  const [className, setClassName] = useState("complaint-decision-default");
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -36,6 +37,17 @@ function App() {
 
       const decisionResult = await response.json();
       setPriority(decisionResult.result);
+
+      // if (priortiy == "High") {
+      //   setClassName = "complaint-decision-red";
+      // } else if (priortiy == "Medium") {
+      //   setClassName = "complaint-decision-yellow";
+      // } else if (priortiy == "Low") {
+      //   setClassName = "complaint-decision-green";
+      // } else {
+      //   setClassName = "complaint-decision-default";
+      // }
+
       console.log(priortiy);
     } catch (error) {
       console.error("There was an error!", error);
@@ -49,7 +61,9 @@ function App() {
         <div className="App">
           <div className="heading">
             <h1>Complaint Portal</h1>
-            <div></div>
+            <div className="complaint-decision-default">
+              <p>Priority: {priortiy}</p>
+            </div>
           </div>
 
           <div className="second-heading">
@@ -105,22 +119,9 @@ function App() {
               </textarea>
             </div>
 
-            <div className="submit-button">
+            <div>
               <button className="submit-button">Submit</button>
             </div>
-
-            {/* <div className="complaint-decision">
-              <label className="complaint-decision-label">
-                Complaint Priority
-              </label>
-              <input
-                type="text"
-                name="complaint_decision"
-                value={priortiy}
-                readOnly={true}
-                className="complaint-decision-input"
-              />
-            </div> */}
           </form>
         </div>
       </main>
