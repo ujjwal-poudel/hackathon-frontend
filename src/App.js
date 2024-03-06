@@ -48,22 +48,28 @@ function App() {
       <main>
         <div className="App">
           <div className="heading">
-            <h1>Welcome to complaint portal</h1>
-            <h2>Determine the priortiy of your complaint with AI</h2>
+            <h1>Complaint Portal</h1>
+            <div></div>
+          </div>
+
+          <div className="second-heading">
+            <h2>AI model that determines complaints priority</h2>
           </div>
 
           <form className="complaint-form" onSubmit={handleFormSubmit}>
             <div className="complaint">
               {/* Complaint category field */}
               <label className="complaint-category-label">
-                Complaint Category
+                Complaint Category:
               </label>
+
               <select
+                className="complaint-category-input"
                 name="complaint_type"
                 onChange={handleInput}
-                defaultValue={"-- Select a complaint type --"}
+                defaultValue={"Select a category"}
               >
-                <option disabled>-- Select a complaint type --</option>
+                <option disabled>Select a category</option>
                 <option>CIVIL RIGHTS COMPLAINT</option>
                 <option>CRIMINAL ALLEGATION</option>
                 <option>DEPARTMENTAL VIOLATIONS</option>
@@ -86,14 +92,17 @@ function App() {
             <div className="complaint-description">
               {/* Complaint description field */}
               <label className="complaint-description-label">
-                Complaint Description
+                Complaint Description:
               </label>
+
               <textarea
                 name="complaint_description"
                 // value={formvalue.complaint_description}
                 onChange={handleInput}
                 className="complaint-description-input"
-              ></textarea>
+              >
+                Enter description of the event.
+              </textarea>
             </div>
 
             <div className="submit-button">

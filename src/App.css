@@ -4,31 +4,88 @@ main {
   align-items: center;
   justify-content: center;
 }
+
 .App {
-  background-color: bisque;
-  padding: 2em;
-  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  width: 100%;
+  max-width: 495px;
 }
 
-.heading h1 {
-  font-size: 2em;
-  margin-bottom: 0.5em;
+.heading {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0px 0px 6px 0px;
 }
-.heading h2 {
-  font-size: 1.5em;
-  margin-bottom: 2em;
+
+.second-heading {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0px 0px 53px 0px;
 }
-form .complaint {
+
+.complaint-form {
+  font-family: "Open Sans", sans-serif;
+}
+
+.complaint {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  padding: 0px 0px 28px 0px;
 }
 
-form .complaint select {
-  padding: 0.5em;
+.complaint-category-label {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.complaint-category-input {
+  width: 100%;
+  max-width: 208px;
+  height: 33px;
+  font-size: 12px;
+  padding: 8px 0 9px 12px;
   border-radius: 5px;
-  background-color: aliceblue;
+  background-color: #f2f2f2;
 }
 
-form .complaint select::active {
-  border-color: red;
+.complaint-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0px 0px 12px 0px;
+}
+
+.complaint-description-label {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.complaint-description-input {
+  width: 100%;
+  max-width: 208px;
+  height: 126px;
+  font-size: 12px;
+  resize: none;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.complaint-description-input {
+  padding: 9px 12px;
+}
+
+.submit-button {
+  width: 100%;
+  max-width: 446px;
+  height: 33px;
+  background-color: #d9d9d9;
+  border-radius: 5px;
 }
