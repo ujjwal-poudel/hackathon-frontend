@@ -1,1 +1,13 @@
-.
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 133px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 0px 48px;
+  align-items: center;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+}

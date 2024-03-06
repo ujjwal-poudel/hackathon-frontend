@@ -1,12 +1,34 @@
-.App {
-  border: 5px solid;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+}
+.App {
+  background-color: bisque;
+  padding: 2em;
+  border-radius: 10px;
+}
+
+.heading h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+.heading h2 {
+  font-size: 1.5em;
+  margin-bottom: 2em;
+}
+form .complaint {
+  display: flex;
+  justify-content: space-between;
+}
+
+form .complaint select {
+  padding: 0.5em;
+  border-radius: 5px;
+  background-color: aliceblue;
+}
+
+form .complaint select::active {
+  border-color: red;
 }
