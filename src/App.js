@@ -9,7 +9,7 @@ function App() {
     complaint_description: "",
   });
 
-  const [result, setResult] = useState("");
+  const [priortiy, setPriority] = useState("");
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -34,8 +34,8 @@ function App() {
       }
 
       const decisionResult = await response.json();
-      setResult(decisionResult);
-      console.log(result);
+      setPriority(decisionResult.result);
+      console.log(priortiy);
     } catch (error) {
       console.error("There was an error!", error);
     }
@@ -53,10 +53,12 @@ function App() {
         <div className="complaint">
           {/* Complaint category field */}
           <label className="complaint-category-label">Complaint Category</label>
-          <select name="complaint_type" onChange={handleInput}>
-            <option disabled selected>
-              -- Select a complaint type --
-            </option>
+          <select
+            name="complaint_type"
+            onChange={handleInput}
+            defaultValue={"-- Select a complaint type --"}
+          >
+            <option disabled>-- Select a complaint type --</option>
             <option>CIVIL RIGHTS COMPLAINT</option>
             <option>CRIMINAL ALLEGATION</option>
             <option>DEPARTMENTAL VIOLATIONS</option>
@@ -98,8 +100,7 @@ function App() {
           <input
             type="text"
             name="complaint_decision"
-            value={result.complaint_decision}
-            onChange={handleInput}
+            value={priortiy}
             readOnly={true}
             className="complaint-decision-input"
           />
