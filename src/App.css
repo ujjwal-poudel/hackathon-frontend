@@ -4,7 +4,7 @@ main {
   align-items: center;
   justify-content: center;
   position: relative;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 133px);
   margin: 0px 10px;
 }
 
@@ -14,7 +14,6 @@ main {
   color: #ffffff;
   width: 100%;
   max-width: 495px;
-  max-height: 383px;
   border-radius: 16px;
   padding: 16px 25px;
   box-sizing: border-box;
