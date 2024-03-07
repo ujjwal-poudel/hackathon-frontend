@@ -51,7 +51,7 @@ function App() {
           <div className="heading">
             <h1>Complaint Portal</h1>
             <div className="complaint-decision-default">
-              <p>Priority: {priortiy}</p>
+              <p>Priority: {priortiy.charAt(0).toUpperCase() + priortiy.slice(1)}</p>
             </div>
           </div>
 
