@@ -121,6 +121,7 @@ main {
   resize: none;
   background-color: #f2f2f2;
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .complaint-description-input {
