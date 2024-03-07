@@ -11,7 +11,6 @@ function App() {
   });
 
   const [priortiy, setPriority] = useState("N/A");
-  const [className, setClassName] = useState("complaint-decision-default");
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -37,16 +36,6 @@ function App() {
 
       const decisionResult = await response.json();
       setPriority(decisionResult.result);
-
-      // if (priortiy == "High") {
-      //   setClassName = "complaint-decision-red";
-      // } else if (priortiy == "Medium") {
-      //   setClassName = "complaint-decision-yellow";
-      // } else if (priortiy == "Low") {
-      //   setClassName = "complaint-decision-green";
-      // } else {
-      //   setClassName = "complaint-decision-default";
-      // }
 
       console.log(priortiy);
     } catch (error) {
@@ -119,7 +108,7 @@ function App() {
               </textarea>
             </div>
 
-            <div>
+            <div className="submit-button-container">
               <button className="submit-button">Submit</button>
             </div>
           </form>
